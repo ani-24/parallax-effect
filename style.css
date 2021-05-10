@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Goblin+One&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 300vh;
+  background: #2f3640;
+}
+
+.text-wrapper {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  padding: 5%;
+  overflow: hidden;
+}
+
+.text-wrapper::before, .text-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -10%;
+  height: 0%;
+  width: 1px;
+  background: #a8a8a8;
+  -webkit-transition: height 250ms ease-out;
+  transition: height 250ms ease-out;
+  z-index: 2;
+}
+
+.text-wrapper::after {
+  top: 40%;
+  -webkit-transition-delay: 250ms;
+          transition-delay: 250ms;
+  z-index: -1;
+}
+
+.text-wrapper .text {
+  position: relative;
+  font-size: 5rem;
+  color: #fff;
+  font-family: "Goblin One", cursive;
+  text-transform: uppercase;
+  -webkit-transform: translateX(-120%);
+          transform: translateX(-120%);
+  -webkit-transition: -webkit-transform 750ms ease-in-out;
+  transition: -webkit-transform 750ms ease-in-out;
+  transition: transform 750ms ease-in-out;
+  transition: transform 750ms ease-in-out, -webkit-transform 750ms ease-in-out;
+  -webkit-transition-delay: 500ms;
+          transition-delay: 500ms;
+}
+
+.text-wrapper .text.lower-text {
+  z-index: -1;
+}
+
+.text-wrapper .text.upper-text {
+  z-index: 2;
+}
+
+.text-wrapper.animate::before, .text-wrapper.animate::after {
+  height: 50%;
+}
+
+.text-wrapper.animate .text {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.img {
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  top: 120%;
+  left: 8%;
+  z-index: 1;
+}
+/*# sourceMappingURL=style.css.map */
